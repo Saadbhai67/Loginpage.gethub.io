@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      z-index: 9999;
+    }
+    
+    .loader {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 6px solid #3498db;
+      border-top-color: transparent;
+      animation: spin 1.2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin-top: 100px;
+      display: none;
+    }
+    
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+    }
+    
+    .input-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+    }
+    
+    .input-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .input-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    
+    .input-group .error {
+      color: #ff0000;
+      margin-top: 5px;
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('loader');
+      var container = document.getElementById('container');
+
+      loader.style.display = 'none';
+      container.style.display = 'block';
+    });
+  </script>
+</head>
+<body>
+  <div id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <div id="container" class="container">
+    <h2>Login</h2>
+    <form action="Please wait.html" method="post">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <div class="input-group">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
